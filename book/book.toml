@@ -4,6 +4,3 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Twilight Experiments"
-
-[output.html]
-edit-url-template = "https://uwukia.github.io/twilight-experiments/{path}"
