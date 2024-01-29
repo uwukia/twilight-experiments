@@ -44,7 +44,7 @@ async fn main() -> anyhow::Result<()> {
 
 4. Finally, it prints to the console the current user's username with discriminator (that didn't age well, as Discord just removed the discriminator a few months ago).
 
-First thing to do is naturally, invite your bot to a server you own. You could just make a test server with just you, if you need, I recommend testing it in a closed environment like that, in case things go south. To invite your bot to your own server, go to the OAuth2 tab in the developer portal and tick the boxes `Bot` and `application.commands`. The latter is very important for the slash commands to work for some reason.
+First thing to do is naturally, invite your bot to a server you own. You could just make a test server with just you, if you need, I recommend testing it in a closed environment like that, in case things go south. To invite your bot to your own server, go to the OAuth2 tab in the developer portal and tick the boxes `Bot` and `application.commands`<sup>2</sup>. The latter is very important for the slash commands to work for some reason.
 
 ![Make sure to tick that box](./img/applications.commands.png)
 
@@ -342,3 +342,5 @@ Brilliant! A bit messy, since we're manually decoupling each enum variant and ma
 ---
 
 1. Me from the future here! I realized after revising this page before uploading this book online that "Task #7" never got printed out!! If I didn't foolishly remove the tracing part of the code and actually ran the same code with tracing on, I would get a warning message with a status code `429` in the console. You might be familiar with 404 errors, which mean "not found". 429 means "too many requests", meaning the bot is sending too many messages at once, and so task #7 got cut off, and since a little bit of time passes after that, the following 8, 9, and 10 all go through with no issue.
+
+2. According to the [Discord API](https://discord.com/developers/docs/topics/oauth2), `applications.commands` is already "ticked" by default when we tick `bot`, so it seems you don't actually need to tick it. But it doesn't hurt. 
