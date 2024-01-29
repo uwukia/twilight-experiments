@@ -7,4 +7,3 @@ title = "Twilight Experiments"
 
 [output.html]
 edit-url-template = "https://uwukia.github.io/twilight-experiments/{path}"
-site-url = "/book/"
