@@ -1,0 +1,17 @@
+[package]
+name = "twilight-experiments"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+twilight-model = "0.15.4"
+twilight-http = "0.15.4"
+twilight-gateway = "0.15.4"
+twilight-cache-inmemory = "0.15.4"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+tokio = { features = ["macros", "signal", "rt-multi-thread"], version = "1.0" }
+anyhow = "1.0.79"
+futures-util = "0.3.30"

@@ -1,0 +1,9 @@
+# Prelude
+
+[`twilight-rs`](https://github.com/twilight-rs/twilight) is a Rust ecosystem for working with the Discord API, mostly useful for making discord bots. According to their own [website](https://twilight.rs/), "Twilight is meant for people who are very familiar with Rust and at least somewhat familiar with Discord bots. It aims to be the library you use when you want".
+
+I am familiar with Rust, but barely familiar with Discord bots. By inspecting their crates, I see the terms "gateway", "shard", "in-memory cache", and many more of which I don't know the meaning of, which is likely the definition of being a beginner. But what could go wrong with trying it anyway, am I right?
+
+Hence, this is a book about a silly dummy (me) trying out a Rust crate with barely enough knowledge to make anything, doing their best to explain their thought process and hopefully not making wrong moves (the more experienced programmers who read it will be the judges of that), purely because the Rust crate has references to a specific purple horse. Hence, you shouldn't read this expecting to find tutorials or small guides. If you're a beginner like me, it's like watching another beginner make mistakes first, and working through the same thought process so you can learn from them! If you're very knowledgeable, maybe this is useful to see through the lens of a beginner to anything HTTP/Gateway/async/Event/Arc/etc (or you can always just point and laugh).
+
+Importantly, I like to keep the page's content "intact" once it's fully written, since any mistake it has is a mistake from me, which could be a mistake someone else makes. So to ensure the mistakes are always there (or simply missing information), I'll strikethrough whatever needed and add a footnote. So if you ever see tiny numbers like this one<sup>1</sup>, make sure to scroll to the bottom of the page to see what it means!
