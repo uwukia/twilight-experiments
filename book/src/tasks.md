@@ -6,7 +6,7 @@ If we run the same code as the previous page and try to call the `/hello` comman
 
 This is because our code will completely halt listening to events while it's processing a hello message. To ensure our bot can handle multiple requests at the same time, we need it to split tasks as fast as possible. That is, right after listening to an event, we "spawn a thread" and do the event handling on that new thread, allowing for the main thread to keep going and listen to more events as they come in.
 
-When I say "spawn a thread", that's not what we'll literally do. If our bot is hosted in a server with a CPU containing 64 cores, having 1000 threads handling 1000 different user commands is more harmful than helpful. Thankfully, async is here so that we have to do **zero thread handling**, and letting [Tokio](https://tokio.rs/), the biggest Rust async runtime to do that for us. All we have to do is spawn one tokio task everytime an event shows up.
+When I say "spawn a thread", that's not what we'll literally do. If our bot is hosted in a server with a CPU containing 64 cores, having 1000 threads handling 1000 different user commands is more harmful than helpful. Thankfully, async is here so that we have to do **no thread handling**, and let [Tokio](https://tokio.rs/), the biggest Rust async runtime to do that for us. All we have to do is spawn one tokio task everytime an event shows up.
 
 Responding to events requires the http client, so every task spawned will require the event itself, and a reference to the http client. However, due to the way tokio's [spawn function](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html) works, whatever async block is spawned needs to return a static future (that is, it must have an infinite lifetime). But if we include a reference to the client, it ends up tied to its lifetime, which does not live long enough.
 
@@ -104,7 +104,7 @@ async fn handle_event(
     client: Arc<ApplicationClient>
 ) -> anyhow::Result<()> {
     if let Event::InteractionCreate(ref interaction) = event {
-        
+
         // we get the interaction client like this
         let interaction_client = client.interaction();
 
